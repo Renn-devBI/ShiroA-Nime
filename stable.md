@@ -1,13 +1,10 @@
-# 3.2.3
+# 3.2.4
 
-## Pembaruan ShiroA v3.2.3
+## ShiroA v3.2.4 Release Notes
 
-- Penambahan sumber streaming anime built-in (ShiroA - OtakuDesu, ShiroA - Kuronime, ShiroA - Kuramanime, ShiroA - Samehadaku, ShiroA - Oploverz, ShiroA - NimeGami)
-- Perbaikan menyeluruh resolver video streaming: integrasi native built-in parser untuk 6 sumber ShiroA (OtakuDesu, Kuronime AES v9, Kuramanime QuickJS leviathan auth, Samehadaku nonce AJAX, Oploverz Filedon/Upbolt, NimeGami Berkasdrive), injeksi header Referer otomatis, serta perbaikan OkHttpClient dan Cloudflare HTTP 200 challenge pada ExoPlayer
-- Sistem Auto-Switch domain otomatis untuk melewati pemblokiran domain
-- Integrasi proteksi Cloudflare dan header modern
-- Pengaturan bahasa aplikasi mengikuti konfigurasi sistem Android serta dapat diubah manual di Common settings (`System Default`, `English`, `Indonesia`, `日本語`, `Русский`, `Español`, `中文`)
-- Keamanan aplikasi: penghapusan dialog konfigurasi server/VPS & Discord webhook dari UI APK; laporan crash/kendala dirutekan aman melalui backend server
-- Sistem moderasi komentar berhierarki & Developer Controls: identifikasi permanen akun Developer by AniList User ID, aksi Ban/Unban komentar & Ban/Unban pengguna (24 jam, 7 hari, 30 hari, permanen), panel Developer Controls, perbaikan sinkronisasi endpoint & penolakan host HTML 404/non-JSON, re-autentikasi otomatis saat moderasi, pemetaan pesan error multibahasa mengikuti bahasa sistem/aplikasi, serta penyempurnaan tata letak dialog moderasi
-- Integrasi repository extension default yuzono anime-repo
-- Perbaikan sistem komentar dan endpoint update resmi ShiroA-Nime
+- Hierarchical Staff & Role System: Developer can now search, link, and assign or remove Admins and Moderators by ID or Username across AniList, MyAnimeList (MAL), and Discord directly inside Developer Controls
+- Automatic Admin Controls: Users promoted to Admin or Moderator automatically unlock the dedicated Admin Controls menu in Settings (separate from Developer Controls), restricted to comment moderation and temporary bans (24 Hours / 7 Days; permanent bans, mass comment hiding, and staff management remain Developer-only)
+- Flexible Lookup by ID or Username: User lookup in both Developer Controls and Admin Controls now accepts either numeric AniList ID or AniList Username
+- Broadcast Notifications Fix (`shiromanga.my.id`): App now polls both the primary VPS and gateway endpoints (`www.shiromanga.my.id`, `shiromanga.my.id`, `shiromanga-docs.vercel.app`) independently and deduplicates notices accurately so announcements published on `shiromanga.my.id` always appear
+- Crash & Issue Reporting Fix: Stricter backend JSON acknowledgement verification and awaited Discord webhook forwarding on `ShiroA-Server` ensure user reports and crash logs reliably deliver to Discord without silently failing on non-JSON responses
+- Previous 3.2.3 features retained: built-in streaming parsers for 6 ShiroA sources, multi-language system & Common Settings selector, secure webhook-free APK build, and hierarchical moderation error localization
