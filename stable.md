@@ -1,11 +1,10 @@
-# 3.2.4
+# 3.2.5
 
-## ShiroA v3.2.4 Release Notes
+## ShiroA v3.2.5 Release Notes
 
-- Hierarchical Staff & Role System: Developer can now search, link, and assign or remove Admins and Moderators by ID or Username across AniList, MyAnimeList (MAL), and Discord directly inside Developer Controls with verified checkmark status & notification badges
-- Automatic Admin Controls: Users promoted to Admin or Moderator automatically unlock the dedicated Admin Controls menu in Settings (separate from Developer Controls), restricted to comment moderation and temporary bans (24 Hours / 7 Days; permanent bans, mass comment hiding, and staff management remain Developer-only)
-- Background Release-Tag Update Notifications: Periodic background update worker checks GitHub releases and sends high-priority notifications displaying the exact GitHub release tag version with one-tap background APK download & install prompt
-- Flexible Lookup by ID or Username: User lookup in both Developer Controls and Admin Controls now accepts either numeric AniList ID or AniList Username
-- Broadcast Notifications Fix (`shiromanga.my.id`): App now polls both the primary VPS and gateway endpoints (`www.shiromanga.my.id`, `shiromanga.my.id`, `shiromanga-docs.vercel.app`) independently and deduplicates notices accurately so announcements published on `shiromanga.my.id` always appear
-- Crash & Issue Reporting Fix: Stricter backend JSON acknowledgement verification and awaited Discord webhook forwarding on `ShiroA-Server` ensure user reports and crash logs reliably deliver to Discord without silently failing on non-JSON responses
-- Previous 3.2.3 features retained: built-in streaming parsers for 6 ShiroA sources, multi-language system & Common Settings selector, secure webhook-free APK build, and hierarchical moderation error localization
+- Real-Time Watch Party (Nobar) via WebSocket: Create public or private Watch Party rooms with shareable 6-character codes, join active public lobbies, switch between Host-Only and Collaborative playback controls, synchronize Play/Pause/Seek/Episode with heartbeat drift correction, and chat live directly inside the video player
+- Cloud Watch History & `.sani` Cloud Backup/Restore: Automatically sync exact episode resume timestamps across devices tied to your AniList/MAL/Discord account with newest-timestamp conflict resolution, plus 1-tap encrypted `.sani` settings & progress backup/restore in Data Settings
+- 2-Tier Smart Source Auto-Failover: Automatically recovers from stream, server, decoder, or network playback errors by failing over first to alternative servers/extractors on the current source and then across built-in anime sources, resuming seamlessly at the exact playback timestamp
+- Automatic Episode Filler/Canon Detection & OP/ED Theme Preview: Automatically scrapes AnimeFillerList alongside Jikan metadata to display localized Manga Canon, Anime Canon, Mixed, and Filler badges on episode lists, and adds an in-app AnimeThemes Opening/Ending preview player inside Anime Info
+- MKV / Torrent Multi-Sub Dissection & Pre-Load Translation Gate: Automatically selects English subtitle tracks when your target language is absent on MKV/Torrent multi-sub streams, dissects ASS/SSA/SRT/VTT packets to bypass untranslated LibASS overlays, and pre-loads translations via Dual Engine (AI Anime Context or Standard Fast) before playback starts to minimize subtitle delay
+- Retains all v3.2.4 security, hierarchical Developer/Admin/Moderator controls, webhook-free builds, broadcast announcements, and background release-tag updater features
